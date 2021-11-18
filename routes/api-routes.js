@@ -1,7 +1,7 @@
 const router = require(`express`).Router();
-const path = require(`path`);
-const mongoose = require(`mongoose`);
-const mongojs = require(`mongojs`);
+const path = require('path');
+const mongoose = require('mongoose');
+const mongojs = require('mongojs');
 const db = require(`../models`);
 
 router.get(`/workouts`, (req, res) => {
