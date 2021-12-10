@@ -4,13 +4,9 @@ const mongoose = require(`mongoose`);
 const routes = require(`./routes`);
 const PORT = process.env.PORT || 3000;
 const db = require(`./models`);
+require("dotenv").config();
 
-mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/workout`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-});
+mongoose.connect(process.env.MONGODB_URI || `mongodb://localhost/workout`, {});
 
 const app = express();
 
@@ -24,5 +20,5 @@ app.use(logger(`dev`));
 app.use(routes);
 
 app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}!`);
+  console.log(`App running on port ${PORT}!`);
 });
